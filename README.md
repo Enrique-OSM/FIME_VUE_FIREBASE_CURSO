@@ -10,17 +10,3 @@ Cada clase nueva habrá una rama nueva que nace de main con el nombre de "Clase 
 
 - Alejandro Sauqué Pérez
   **FIME - DevZone 2024**
-
-## Installation
-
-Instalar dependencias
-
-```bash
-  npm install
-```
-
-Correr el servidor
-
-```bash
-  npm run dev
-```
