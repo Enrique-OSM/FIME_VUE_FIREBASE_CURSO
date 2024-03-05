@@ -7,7 +7,7 @@ Este es el repositorio para las clases de VueJS en el cual podrás ver el códig
 Cada clase nueva habrá una rama nueva que nace de main con el nombre de "Clase #(numero de clase)". Para ver el código cambia de rama en la parte superior de este repositorio donde dice "main". Una vez en la rama podrás ver los archivos correspondientes de la clase seleccionada.
 
 ## Authors
-
+- Enrique Oliband Salazar Mares
 - Alejandro Sauqué Pérez
   **FIME - DevZone 2024**
 
