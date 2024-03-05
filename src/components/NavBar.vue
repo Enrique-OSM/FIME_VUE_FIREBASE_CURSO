@@ -13,14 +13,23 @@ const emits = defineEmits(['changePage','hideLogin'])
 </template>
 <style scoped>
 nav {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background-color: aliceblue;
-  width: 100%;
-}
+    background-color: lightblue;
+    padding: 10px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
 
-nav>div>span { /*html semantico*/
-  margin-right: 20px;
-}
+  h1 {
+    margin-right: auto;
+    color: white;
+  }
+
+  span {
+    margin-left: 10px;
+    cursor: pointer;
+  }
+  span:hover {
+    color: white;
+  }
 </style>
