@@ -1,34 +1,48 @@
 <script setup>
 import { ref } from "vue";
+import LoginPage from "./pages/LoginPage.vue"
+import NavBar from "./components/NavBar.vue"
+import AcercaDeNosotros from "./pages/AcercaDeNosotros.vue";
+import ExplorePage from "./pages/ExplorePage.vue"
+const isLoginShown = ref(true);
 
-const count = ref(0);
+//pageShown ("about-us" | "explore" | reseñas)
+const pageShown = ref("about-us");
 
-function increment() {
-  count.value = count.value + 1;
-}
-
-function decrement() {
-  count.value = count.value - 1;
+function changePage(page) {
+  pageShown.value = page;
 }
 </script>
 
 <template>
-  <div>
-    <h3 :class="{ red: count > 10, green: count < 0 }">
-      El contador actual es: {{ count }}
-    </h3>
-    <button @click="increment()" type="button">Incrementar</button>
-    <button @click="decrement()" type="button">Decrementar</button>
+  <!--Login-->
+  <LoginPage @hide-login="isLoginShown = false" v-if="isLoginShown === true" />
+  <div v-else>
+    <!--nav bar-->
+    <NavBar @change-page="changePage" @hide-login="isLoginShown=true"/>
+    <AcercaDeNosotros v-if="pageShown === 'about-us'"></AcercaDeNosotros>
+    <ExplorePage v-if="pageShown === 'explore'"></ExplorePage>
+    <section v-if="pageShown === 'reviews'">
+      <h2>reviwes</h2>
+    </section>
   </div>
-  <h2 v-if="count >= 20">Lo lograste</h2>
-  <h2 v-else>Aun no lo logras</h2>
-</template>
 
+  <!--contenido de la app-->
+</template>
 <style scoped>
-.red {
-  color: red;
+/*hacerca de nosotros*/
+.about-us-container {
+  margin: auto;
+  max-width: 700px;
 }
-.green {
-  color: green;
+
+.about-us-container>h2 {
+  text-align: center;
+  font-weight: 600;
+}
+
+.about-us-container>img {
+  margin: auto;
+  max-width: 700px;
 }
 </style>
